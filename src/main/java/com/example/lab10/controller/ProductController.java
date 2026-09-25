@@ -109,7 +109,7 @@ public class ProductController {
     @GetMapping("/category/{category}")
     public Flux<Product> getByCategory(@PathVariable String category) {
         // TODO: เติม code ตรงนี้
-        return null; // ← แก้บรรทัดนี้
+        return service.getByCategory(category);
     }
 
     /**
