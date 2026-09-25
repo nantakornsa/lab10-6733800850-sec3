@@ -96,7 +96,7 @@ public class ProductController {
     @DeleteMapping("/{id}")
     public Mono<Void> delete(@PathVariable String id) {
         // TODO: เติม code ตรงนี้
-        return null; // ← แก้บรรทัดนี้
+        return service.delete(id);
     }
 
     /**
