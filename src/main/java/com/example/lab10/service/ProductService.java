@@ -77,7 +77,7 @@ public class ProductService {
      */
     public Mono<Void> delete(String id) {
         // TODO: เติม code ตรงนี้
-        return null; // ← แก้บรรทัดนี้
+        return repository.deleteById(id);
     }
 
     // ── 5. กรองตาม category ──────────────────────────────
