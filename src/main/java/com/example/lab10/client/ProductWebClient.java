@@ -1,8 +1,10 @@
 package com.example.lab10.client;
 
-import com.example.lab10.model.Product;
 import org.springframework.stereotype.Component;
 import org.springframework.web.reactive.function.client.WebClient;
+
+import com.example.lab10.model.Product;
+
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -56,7 +58,10 @@ public class ProductWebClient {
      */
     public Flux<Product> getAllProducts() {
         // TODO: เติม code ตรงนี้
-        return null; // ← แก้บรรทัดนี้
+        return client.get()
+                .uri("/products")
+                .retrieve()
+                .bodyToFlux(Product.class);
     }
 
     /**
