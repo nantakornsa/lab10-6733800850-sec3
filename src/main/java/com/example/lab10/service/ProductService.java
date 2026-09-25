@@ -98,6 +98,7 @@ public class ProductService {
      */
     public Mono<Double> getDiscountedPrice(String id) {
         // TODO: เติม code ตรงนี้
-        return null; // ← แก้บรรทัดนี้
+        return getById(id)
+                .map(p -> p.getDiscountedPrice());
     }
 }
