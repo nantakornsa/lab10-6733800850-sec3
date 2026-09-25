@@ -111,7 +111,10 @@ public class ProductWebClient {
      */
     public Flux<Product> getByCategory(String category) {
         // TODO: เติม code ตรงนี้
-        return null; // ← แก้บรรทัดนี้
+        return client.get()
+                .uri("/products/category/{category}", category)
+                .retrieve()
+                .bodyToFlux(Product.class);
     }
 
     /**
