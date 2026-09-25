@@ -76,7 +76,11 @@ public class ProductWebClient {
      */
     public Mono<Product> createProduct(Product product) {
         // TODO: เติม code ตรงนี้
-        return null; // ← แก้บรรทัดนี้
+        return client.post()
+                .uri("/products")
+                .bodyValue(product)
+                .retrieve()
+                .bodyToMono(Product.class);
     }
 
     /**
