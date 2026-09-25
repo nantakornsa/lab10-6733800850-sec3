@@ -130,6 +130,10 @@ public class ProductWebClient {
      */
     public Mono<Double> getDiscountedPrice(String id) {
         // TODO: เติม code ตรงนี้
-        return null; // ← แก้บรรทัดนี้
+        return client.get()
+                .uri("/products/{id}/price", id)
+                .retrieve()
+                .bodyToMono(Double.class)
+                .doOnNext(price -> System.out.println("Price: " + price));
     }
 }
