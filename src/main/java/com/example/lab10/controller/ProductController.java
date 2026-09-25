@@ -122,6 +122,6 @@ public class ProductController {
     @GetMapping("/{id}/price")
     public Mono<Double> getDiscountedPrice(@PathVariable String id) {
         // TODO: เติม code ตรงนี้
-        return null; // ← แก้บรรทัดนี้
+        return service.getDiscountedPrice(id);
     }
 }
