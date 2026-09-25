@@ -60,7 +60,7 @@ public class ProductRepository {
      */
     public Flux<Product> findAll() {
         // TODO: เติม code ตรงนี้
-        return null; // ← แก้บรรทัดนี้
+        return Flux.fromIterable(store.values());
     }
 
     // ── 3. บันทึก Product ────────────────────────────────
