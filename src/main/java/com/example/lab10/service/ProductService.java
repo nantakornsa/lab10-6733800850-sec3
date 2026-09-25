@@ -86,7 +86,7 @@ public class ProductService {
      */
     public Flux<Product> getByCategory(String category) {
         // TODO: เติม code ตรงนี้
-        return null; // ← แก้บรรทัดนี้
+        return repository.findByCategory(category);
     }
 
     // ── 6. คำนวณราคาหลังส่วนลด ───────────────────────────
