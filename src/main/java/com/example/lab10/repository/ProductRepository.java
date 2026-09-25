@@ -85,7 +85,8 @@ public class ProductRepository {
      */
     public Mono<Void> deleteById(String id) {
         // TODO: เติม code ตรงนี้
-        return null; // ← แก้บรรทัดนี้
+        store.remove(id);
+        return Mono.empty();
     }
 
     // ── 5. กรองตาม category ──────────────────────────────
