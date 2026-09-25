@@ -98,6 +98,7 @@ public class ProductRepository {
      */
     public Flux<Product> findByCategory(String category) {
         // TODO: เติม code ตรงนี้
-        return null; // ← แก้บรรทัดนี้
+        return findAll()
+                .filter(p -> p.getCategory().equalsIgnoreCase(category));
     }
 }
