@@ -47,8 +47,8 @@ public class ProductRepository {
      *       ถ้ามีค่าให้ใช้ Mono.just(product)
      */
     public Mono<Product> findById(String id) {
-        // TODO: เติม code ตรงนี้
-        return null; // ← แก้บรรทัดนี้
+        Product product = store.get(id);
+        return product == null ? Mono.empty() : Mono.just(product);
     }
 
     // ── 2. หา Product ทั้งหมด ────────────────────────────
