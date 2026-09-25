@@ -53,7 +53,7 @@ public class ProductService {
      */
     public Flux<Product> getAll() {
         // TODO: เติม code ตรงนี้
-        return null; // ← แก้บรรทัดนี้
+        return repository.findAll();
     }
 
     // ── 3. บันทึก Product ────────────────────────────────
