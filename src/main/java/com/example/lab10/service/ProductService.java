@@ -65,7 +65,10 @@ public class ProductService {
      */
     public Mono<Product> save(Product product) {
         // TODO: เติม code ตรงนี้
-        return null; // ← แก้บรรทัดนี้
+        if (product.getId() == null) {
+            product.setId(java.util.UUID.randomUUID().toString());
+        }
+        return repository.save(product);
     }
 
     // ── 4. ลบ Product ────────────────────────────────────
