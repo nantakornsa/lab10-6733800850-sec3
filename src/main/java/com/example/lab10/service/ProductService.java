@@ -1,8 +1,10 @@
 package com.example.lab10.service;
 
+import org.springframework.stereotype.Service;
+
 import com.example.lab10.model.Product;
 import com.example.lab10.repository.ProductRepository;
-import org.springframework.stereotype.Service;
+
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -41,7 +43,8 @@ public class ProductService {
      */
     public Mono<Product> getById(String id) {
         // TODO: เติม code ตรงนี้
-        return null; // ← แก้บรรทัดนี้
+        return repository.findById(id)
+                .switchIfEmpty(Mono.error(new RuntimeException("Product not found: " + id)));
     }
 
     // ── 2. ดึง Product ทั้งหมด ───────────────────────────
