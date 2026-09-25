@@ -72,7 +72,8 @@ public class ProductRepository {
      */
     public Mono<Product> save(Product product) {
         // TODO: เติม code ตรงนี้
-        return null; // ← แก้บรรทัดนี้
+        store.put(product.getId(), product);
+        return Mono.just(product);
     }
 
     // ── 4. ลบ Product ────────────────────────────────────
