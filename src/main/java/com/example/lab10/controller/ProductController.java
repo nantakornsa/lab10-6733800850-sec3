@@ -83,7 +83,7 @@ public class ProductController {
     @PostMapping
     public Mono<Product> save(@RequestBody Product product) {
         // TODO: เติม code ตรงนี้
-        return null; // ← แก้บรรทัดนี้
+        return service.save(product);
     }
 
     /**
